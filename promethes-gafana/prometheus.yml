@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 10s
+  external_labels:
+    monitor: 'node'
+
+scrape_configs:
+  - job_name: "prometheus"
+    scrape_interval: 10s
+    static_configs:
+    - targets: ["10.1.11.225:9090"]
+
+  - job_name: "node-exporter"
+    scrape_interval: 5s
+    static_configs:
+    - targets: ["10.1.11.225:9100"]
+      labels:
+        group: 'local-machine'
+
+    - targets: ["10.1.11.34:9100", "10.1.11.31:9100","10.1.11.32:9100"]
+      labels:
+        group: 'remote-machines'

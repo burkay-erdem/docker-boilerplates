@@ -1,4 +1,4 @@
----
+--- ## version
 services:
   app:
     container_name: portainer-agent

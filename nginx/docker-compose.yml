@@ -1,5 +1,4 @@
-# docker-compose.yml file
-version: '3.7'
+--- ## version
 
 services:
   # The load balancer

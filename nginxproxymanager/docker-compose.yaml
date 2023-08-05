@@ -1,4 +1,4 @@
----
+--- ## version
 volumes:
   nginxproxymanager-data:
   nginxproxymanager-ssl:

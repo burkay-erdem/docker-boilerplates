@@ -1,0 +1,20 @@
+# docker run -d --hostname my-rabbit --name rabbitMq -p 15672:15672 -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest rabbitmq:3-management
+--- ## version
+
+services:
+  rabbitMq:
+    image: rabbitmq:3-management
+    container_name: 'rabbitMq-management'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    networks:
+      - rabbitMqnetwork
+    hostname: 'my-rabbit'
+networks:
+  rabbitMqnetwork:
+    driver: bridge
